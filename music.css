@@ -1,0 +1,119 @@
+body {
+    background-color: #1a1a2e;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.music-player-container {
+    position: relative;
+    background-color: #162447;
+    border-radius: 15px;
+    padding: 20px;
+    width: 320px;
+    text-align: center;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.golden-liquid {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 320px;
+    height: 180px;
+    border-radius: 20px;
+    background: linear-gradient(60deg, rgba(255, 215, 0, 0.5), rgba(255, 215, 0, 0.9));
+    filter: blur(10px);
+    animation: rotateLiquid 6s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateLiquid {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.controls-container {
+    margin-top: 20px;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button svg {
+    width: 40px;
+    height: 40px;
+    fill: black;
+}
+
+.playlist {
+    display: none;
+    list-style: none;
+    padding: 0;
+    background-color: #d3b8e3;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.playlist li {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #bbb;
+    cursor: pointer;
+}
+
+.playlist li:hover {
+    background-color: #c4a9d1;
+}
+
+.playlist-cover {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+    position: relative;
+}
+
+.playlist-cover svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: black;
+}
+
+.playlist-info strong {
+    display: block;
+    font-size: 16px;
+}
+
+.playlist-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #555;
+}
